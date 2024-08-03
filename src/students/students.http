@@ -2,7 +2,7 @@
 GET http://localhost:3000/students
 
 ### get student
-GET http://localhost:3000/students/1
+GET http://localhost:3000/students/dev_u-bq0U558aj3QU_Aczcwn
 
 ### create student
 POST http://localhost:3000/students
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ### update student
-PATCH http://localhost:3000/students/1
+PATCH http://localhost:3000/students/dev_u-bq0U558aj3QU_Aczcwn
 Content-Type: application/json
 
 {
@@ -23,4 +23,4 @@ Content-Type: application/json
 }
 
 ### delete student
-DELETE  http://localhost:3000/students/1
+DELETE  http://localhost:3000/students/dev_u-bq0U558aj3QU_Aczcwn
