@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
+  NotFoundException,
 } from '@nestjs/common';
 import { StudentsService } from './students.service';
 import { CreateStudentDto } from './dto/create-student.dto';
@@ -26,17 +28,26 @@ export class StudentsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.studentsService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const student = await this.studentsService.findOne(id);
+    if (!student) throw new NotFoundException();
+    return student;
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateStudentDto: UpdateStudentDto) {
-    return this.studentsService.update(id, updateStudentDto);
+  async update(
+    @Param('id') id: string,
+    @Body() updateStudentDto: UpdateStudentDto,
+  ) {
+    const student = await this.studentsService.update(id, updateStudentDto);
+    if (!student) throw new NotFoundException();
+    return student;
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.studentsService.remove(id);
+  @HttpCode(204)
+  async remove(@Param('id') id: string) {
+    const student = await this.studentsService.remove(id);
+    if (!student) throw new NotFoundException();
   }
 }

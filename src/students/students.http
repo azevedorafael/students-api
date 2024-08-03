@@ -2,7 +2,7 @@
 GET http://localhost:3000/students
 
 ### get student
-GET http://localhost:3000/students/dev_u-bq0U558aj3QU_Aczcwn
+GET http://localhost:3000/students/dev_Jv8zBmXDF2a1n73WzcNLw
 
 ### create student
 POST http://localhost:3000/students
@@ -23,4 +23,4 @@ Content-Type: application/json
 }
 
 ### delete student
-DELETE  http://localhost:3000/students/dev_u-bq0U558aj3QU_Aczcwn
+DELETE  http://localhost:3000/students/dev_Jv8zBmXDF2a1n73WzcNLw
